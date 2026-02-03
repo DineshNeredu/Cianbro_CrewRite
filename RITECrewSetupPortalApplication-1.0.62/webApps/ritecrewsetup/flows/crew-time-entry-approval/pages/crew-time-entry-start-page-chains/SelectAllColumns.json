@@ -1,0 +1,27 @@
+{
+  "description": "",
+  "root": "computeMenuValue",
+  "actions": {
+   
+    "assignCols": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.Columns": {
+          "source": "{{ $page.variables.columnOptions }}",
+          "reset": "empty"
+        },
+        "$page.variables.menuValue": {
+          "source": "{{ $chain.computeMenuValue.result }}",
+          "reset": "empty"
+        }
+      }
+    }
+  },
+  "variables": {
+    "detail": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    }
+  }
+}

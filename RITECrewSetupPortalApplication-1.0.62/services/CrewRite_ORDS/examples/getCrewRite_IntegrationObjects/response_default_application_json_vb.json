@@ -1,0 +1,46 @@
+{
+    "items": [
+        {
+            "lookup_code": "Projects"
+        },
+        {
+            "lookup_code": "Oracle Jobs"
+        },
+        {
+            "lookup_code": "Project Team Members"
+        },
+        {
+            "lookup_code": "Oracle Employees"
+        },
+        {
+            "lookup_code": "Customers"
+        },
+        {
+            "lookup_code": "Time Types"
+        },
+        {
+            "lookup_code": "Oracle Departments"
+        },
+        {
+            "lookup_code": "Contracts"
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 8,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_IntegrationObjects"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/CrewRite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_IntegrationObjects"
+        }
+    ]
+}

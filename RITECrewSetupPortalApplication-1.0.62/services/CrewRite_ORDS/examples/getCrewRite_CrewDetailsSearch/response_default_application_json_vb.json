@@ -1,0 +1,201 @@
+{
+    "items": [
+        {
+            "crew_name": "TestCrew",
+            "crewsetup_id": 994,
+            "crew_week": "10-Nov-2025 to 16-Nov-2025",
+            "supervisor": "Simon, Cheryl",
+            "supervisor_id": "300000048645267"
+        },
+        {
+            "crew_name": "Truck Crew",
+            "crewsetup_id": 855,
+            "crew_week": "28-Jul-2025 to 3-Aug-2025",
+            "supervisor": "Smith, Lexi",
+            "supervisor_id": "300000048035625"
+        },
+        {
+            "crew_name": "E&C Power Crew",
+            "crewsetup_id": 854,
+            "crew_week": "28-Jul-2025 to 3-Aug-2025",
+            "supervisor": "Smith, Lexi",
+            "supervisor_id": "300000048035625"
+        },
+        {
+            "crew_name": "Iron Crew",
+            "crewsetup_id": 852,
+            "crew_week": "01-DEC-2025 to 07-DEC-2025",
+            "supervisor": "Schott, Kevin",
+            "supervisor_id": "300000047632120"
+        },
+        {
+            "crew_name": "Iron Crew",
+            "crewsetup_id": 852,
+            "crew_week": "08-DEC-2025 to 14-DEC-2025",
+            "supervisor": "Schott, Kevin",
+            "supervisor_id": "300000047632120"
+        },
+        {
+            "crew_name": "Iron Crew",
+            "crewsetup_id": 852,
+            "crew_week": "22-DEC-2025 to 28-DEC-2025",
+            "supervisor": "Schott, Kevin",
+            "supervisor_id": "300000047632120"
+        },
+        {
+            "crew_name": "Iron Crew",
+            "crewsetup_id": 852,
+            "crew_week": "28-Jul-2025 to 3-Aug-2025",
+            "supervisor": "Schott, Kevin",
+            "supervisor_id": "300000047632120"
+        },
+        {
+            "crew_name": "Concrete Crew",
+            "crewsetup_id": 838,
+            "crew_week": "28-Jul-2025 to 3-Aug-2025",
+            "supervisor": "Smith, Lexi",
+            "supervisor_id": "300000048035625"
+        },
+        {
+            "crew_name": "Power Restoration Team - Texas",
+            "crewsetup_id": 789,
+            "crew_week": "30-Jun-2025 to 6-Jul-2025",
+            "supervisor": "Schott, Kevin",
+            "supervisor_id": "300000047632120"
+        },
+        {
+            "crew_name": "Plumbing 1100",
+            "crewsetup_id": 368,
+            "crew_week": "1-Sep-2025 to 7-Sep-2025",
+            "supervisor": "Butler, Jessica",
+            "supervisor_id": "300000085362578"
+        },
+        {
+            "crew_name": "Plumbing 1100",
+            "crewsetup_id": 368,
+            "crew_week": "10-Mar-2025 to 16-Mar-2025",
+            "supervisor": "Butler, Jessica",
+            "supervisor_id": "300000085362578"
+        },
+        {
+            "crew_name": "Plumbing 1100",
+            "crewsetup_id": 368,
+            "crew_week": "10-Nov-2025 to 16-Nov-2025",
+            "supervisor": "Butler, Jessica",
+            "supervisor_id": "300000085362578"
+        },
+        {
+            "crew_name": "Plumbing 1100",
+            "crewsetup_id": 368,
+            "crew_week": "11-Aug-2025 to 17-Aug-2025",
+            "supervisor": "Butler, Jessica",
+            "supervisor_id": "300000085362578"
+        },
+        {
+            "crew_name": "Plumbing 1100",
+            "crewsetup_id": 368,
+            "crew_week": "11-Nov-2024 to 17-Nov-2024",
+            "supervisor": "Butler, Jessica",
+            "supervisor_id": "300000085362578"
+        },
+        {
+            "crew_name": "Plumbing 1100",
+            "crewsetup_id": 368,
+            "crew_week": "12-May-2025 to 18-May-2025",
+            "supervisor": "Butler, Jessica",
+            "supervisor_id": "300000085362578"
+        },
+        {
+            "crew_name": "Plumbing 1100",
+            "crewsetup_id": 368,
+            "crew_week": "13-Oct-2025 to 19-Oct-2025",
+            "supervisor": "Butler, Jessica",
+            "supervisor_id": "300000085362578"
+        },
+        {
+            "crew_name": "Plumbing 1100",
+            "crewsetup_id": 368,
+            "crew_week": "15-Jul-2024 to 21-Jul-2024",
+            "supervisor": "Butler, Jessica",
+            "supervisor_id": "300000085362578"
+        },
+        {
+            "crew_name": "Plumbing 1100",
+            "crewsetup_id": 368,
+            "crew_week": "15-Sep-2025 to 21-Sep-2025",
+            "supervisor": "Butler, Jessica",
+            "supervisor_id": "300000085362578"
+        },
+        {
+            "crew_name": "Plumbing 1100",
+            "crewsetup_id": 368,
+            "crew_week": "17-Jun-2024 to 23-Jun-2024",
+            "supervisor": "Butler, Jessica",
+            "supervisor_id": "300000085362578"
+        },
+        {
+            "crew_name": "Plumbing 1100",
+            "crewsetup_id": 368,
+            "crew_week": "19-May-2025 to 25-May-2025",
+            "supervisor": "Butler, Jessica",
+            "supervisor_id": "300000085362578"
+        },
+        {
+            "crew_name": "Plumbing 1100",
+            "crewsetup_id": 368,
+            "crew_week": "20-Oct-2025 to 26-Oct-2025",
+            "supervisor": "Butler, Jessica",
+            "supervisor_id": "300000085362578"
+        },
+        {
+            "crew_name": "Plumbing 1100",
+            "crewsetup_id": 368,
+            "crew_week": "22-Sep-2025 to 28-Sep-2025",
+            "supervisor": "Butler, Jessica",
+            "supervisor_id": "300000085362578"
+        },
+        {
+            "crew_name": "Plumbing 1100",
+            "crewsetup_id": 368,
+            "crew_week": "25-Nov-2024 to 1-Dec-2024",
+            "supervisor": "Butler, Jessica",
+            "supervisor_id": "300000085362578"
+        },
+        {
+            "crew_name": "Plumbing 1100",
+            "crewsetup_id": 368,
+            "crew_week": "26-Aug-2024 to 1-Sep-2024",
+            "supervisor": "Butler, Jessica",
+            "supervisor_id": "300000085362578"
+        },
+        {
+            "crew_name": "Plumbing 1100",
+            "crewsetup_id": 368,
+            "crew_week": "26-May-2025 to 1-Jun-2025",
+            "supervisor": "Butler, Jessica",
+            "supervisor_id": "300000085362578"
+        }
+    ],
+    "hasMore": true,
+    "limit": 25,
+    "offset": 0,
+    "count": 25,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_CrewDetailsSearch"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/CrewRite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_CrewDetailsSearch"
+        },
+        {
+            "rel": "next",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_CrewDetailsSearch?offset=25"
+        }
+    ]
+}

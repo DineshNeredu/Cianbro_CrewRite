@@ -1,0 +1,1653 @@
+{
+  "title": "crewtime entry",
+  "description": "",
+  "variables": {
+    "combinationLOV": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "getCrewRite_TimeEntryCombinations",
+        "keyAttributes": "combination_name",
+        "textFilterAttributes": [
+          "combination_name"
+        ]
+      }
+    },
+    "combinationsBlankRowObj": {
+      "type": "getCrewRite_TimeEntryCombinations"
+    },
+    "combinationsCurrentRowObj": {
+      "type": "getCrewRite_TimeEntryCombinations"
+    },
+    "combinationsTableADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "getCrewRite_TimeEntryCombinations",
+        "textFilterAttributes": [
+          "combination_name"
+        ],
+        "keyAttributes": "combination_id"
+
+      }
+    },
+    "crew": {
+      "type": "string",
+      "input": "fromCaller"
+    },
+    "crewDate": {
+      "type": "string",
+      "input": "fromCaller"
+    },
+    "crewsetup_id": {
+      "type": "string",
+      "input": "fromCaller"
+    },
+    "currentProjectObj": {
+      "type": "object"
+    },
+    "currentTaskObj": {
+      "type": {
+        "TaskFinishDate": "string",
+        "TaskId": "any",
+        "TaskName": "string",
+        "TaskNumber": "any"
+      },
+      "defaultValue": {
+        "TaskId": " ",
+        "TaskNumber": " "
+      }
+    },
+    "disableFlag": {
+      "type": "boolean",
+      "defaultValue": true
+    },
+    "fetchProjectSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "responseType": "getCREWRITECR_PROJECTS_LOV1_0GetProjects",
+        "itemsPath": "items",
+        "fetchChain": "getCREWRITECR_PROJECTS_LOV1_0GetProjectsFetch",
+        "keyAttributes": "name",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "name"
+          ]
+        }
+      }
+    },
+    "getCombinationDepartmentSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "CrewRite_ORDS/getCrewRite_DepartmentDetails",
+        "responseType": "getCrewRite_DepartmentDetails",
+        "itemsPath": "items",
+        "keyAttributes": "department",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "department"
+          ]
+        }
+      }
+    },
+    "getCombinationTimeTypeSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "CrewRite_ORDS/getCrewRite_TimeTypes",
+        "responseType": "getCrewRite_TimeTypes",
+        "itemsPath": "items",
+        "keyAttributes": "time_type_name",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "time_type_name"
+          ]
+        }
+      }
+    },
+    "getCrewRiteCrewResourcesListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "CrewRite_ORDS/getCrewRite_CrewResources",
+        "keyAttributes": "resource_name",
+        "itemsPath": "items",
+        "responseType": "getCrewRiteCrewResourcesResponse",
+        "uriParameters": {
+          "p_crewsetup_id": "{{ $variables.headerobj.setupId }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "resource_name"
+          ]
+        }
+      }
+    },
+    "getCREWRITECRPROJECTSLOV1GetProjectsListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "CrewRite_OIC/getCREWRITECR_PROJECTS_LOV1_0GetProjects",
+        "keyAttributes": "name",
+        "itemsPath": "items",
+        "responseType": "getCREWRITECRPROJECTSLOV1GetProjectsResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "name"
+          ]
+        }
+      }
+    },
+    "getCrewRiteDepartmentDetailsListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "CrewRite_ORDS/getCrewRite_DepartmentDetails",
+        "keyAttributes": "department",
+        "itemsPath": "items",
+        "responseType": "getCrewRiteDepartmentDetailsResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "department"
+          ]
+        }
+      }
+    },
+    "getCrewRiteProjectSearch2ListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "CrewRite_ORDS/getCrewRite_ProjectSearch2",
+        "keyAttributes": "project_name",
+        "itemsPath": "items",
+        "responseType": "getCrewRiteProjectSearch2Response",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "project_name"
+          ]
+        }
+      }
+    },
+    "getCrewRiteProjectSearch2ListSDP2": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "CrewRite_ORDS/getCrewRite_ProjectSearch2",
+        "keyAttributes": "project_name",
+        "itemsPath": "items",
+        "responseType": "getCrewRiteProjectSearch2Response2",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "project_name"
+          ]
+        }
+      }
+    },
+    "getCrewRiteProjectSearch2ListSDP3": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "CrewRite_ORDS/getCrewRite_ProjectSearch2",
+        "keyAttributes": "project_name",
+        "itemsPath": "items",
+        "responseType": "getCrewRiteProjectSearch2Response3",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "project_name"
+          ]
+        }
+      }
+    },
+    "getCrewRiteProjectSearch2ListSDP4": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "CrewRite_ORDS/getCrewRite_ProjectSearch2",
+        "keyAttributes": "project_name",
+        "itemsPath": "items",
+        "responseType": "getCrewRiteProjectSearch2Response4",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "project_name"
+          ]
+        }
+      }
+    },
+    "getCrewRiteTimeEntryCombinationsListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "CrewRite_ORDS/getCrewRite_TimeEntryCombinations",
+        "keyAttributes": "combination_name",
+        "itemsPath": "items",
+        "responseType": "getCrewRiteTimeEntryCombinationsResponse",
+        "uriParameters": {
+          "p_crewsetup_id": "{{ $variables.headerobj.setupId }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "combination_name"
+          ]
+        }
+      }
+    },
+    "getCrewRiteTimeTypesListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "CrewRite_ORDS/getCrewRite_TimeTypes",
+        "keyAttributes": "time_type_name",
+        "itemsPath": "items",
+        "responseType": "getCrewRiteTimeTypesResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "time_type_name"
+          ]
+        }
+      }
+    },
+    "getGetCustomerDetailsListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "TimeRite_Ords_Service/getGetCustomerDetails",
+        "keyAttributes": "crew_name",
+        "itemsPath": "items",
+        "responseType": "getGetCustomerDetailsResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "crew_name"
+          ]
+        }
+      }
+    },
+    "getProjectIdChildTasksListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "FSCM_REST_API/getProjectIdChildTasks",
+        "keyAttributes": "TaskNumber",
+        "itemsPath": "items",
+        "responseType": "getProjectIdChildTasksResponse",
+        "uriParameters": {
+          "ProjectId": "{{ $variables.timeEntryDialogobj.project_id }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "TaskNumber"
+          ]
+        }
+      }
+    },
+    "headerobj": {
+      "type": {
+        "crewDate": "any",
+        "crewname": "string",
+        "maxweekid": "any",
+        "setupId": "any"
+
+      },
+      "defaultValue": {
+        "setupId": " ",
+        "crewDate": " ",
+        "maxweekid": " "
+      }
+    },
+    "illustrationBackground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-bg-01.png"
+    },
+    "illustrationForeground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-fg-01.png"
+    },
+    "isEdit": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "mainTimeEntriesTableADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "getCrewRite_TimeEntry",
+        "keyAttributes": "time_entry_id"
+      }
+    },
+    "projectsLOV": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "getProjectsValuesLOV",
+        "textFilterAttributes": [
+          "ProjectName"
+        ],
+        "keyAttributes": "ProjectName"
+      }
+    },
+    "resourceLOVADP": {
+      "defaultValue": {
+        "itemType": "resourcesType",
+        "keyAttributes": "resource_name",
+        "textFilterAttributes": [
+          "resource_name"
+        ]
+      },
+      "type": "vb/ArrayDataProvider2"
+    },
+    "resourceTableADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "resourcesType",
+        "keyAttributes": "resource_id"
+      }
+    },
+    "selectedData": {
+      "type": "getCrewRite_TimeEntry[]"
+    },
+    "selectedResoursesArr": {
+      "type": "resourcesType[]"
+    },
+    "tasksProjectSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "FSCM_REST_API/getProjectIdChildTasks",
+        "responseType": "getProjectIdChildTasks",
+        "itemsPath": "items",
+        "uriParameters": {
+
+          "onlyData": "true",
+          "fields": "TaskId,TaskNumber,TaskName,TaskFinishDate",
+          "ProjectId": "{{ $variables.currentProjectObj.project_id }}"
+        },
+        "keyAttributes": "TaskName",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "TaskName"
+          ]
+        }
+      }
+    },
+    "tempCombinationObj": {
+      "type": {
+        "combination_id": "any"
+      },
+      "defaultValue": {
+        "combination_id": " "
+      }
+    },
+    "tempCombinationRowObj": {
+      "type": "getCrewRite_TimeEntryCombinations"
+    },
+    "timeEntriesBlankRowObj": {
+      "type": "getCrewRite_TimeEntry"
+    },
+    "timeEntriesCurrentRowObj": {
+      "type": "getCrewRite_TimeEntry"
+    },
+    "timeEntriesCustomObj": {
+      "type": "getCrewRite_TimeEntry"
+    },
+    "timeEntriesTableADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "getCrewRite_TimeEntry",
+        "keyAttributes": "time_entry_id"
+      }
+    },
+    "timeEntryDialogobj": {
+      "type": "getCrewRite_TimeEntry"
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getCrewRite_CrewResources": {
+      "endpoint": "getCrewRite_CrewResources",
+      "service": "CrewRite_ORDS",
+      "path": "response-_-items[0]"
+    },
+    "@decorators.getCrewRite_DepartmentDetails": {
+      "endpoint": "getCrewRite_DepartmentDetails",
+      "service": "CrewRite_ORDS",
+      "path": "response"
+    },
+    "@decorators.getCrewRite_TimeEntry": {
+      "endpoint": "getCrewRite_TimeEntry",
+      "service": "CrewRite_ORDS",
+      "path": "response-_-items[0]"
+    },
+    "@decorators.getCrewRite_TimeEntryCombinations": {
+      "endpoint": "getCrewRite_TimeEntryCombinations",
+      "service": "CrewRite_ORDS",
+      "path": "response-_-items[0]"
+    },
+    "@decorators.getCrewRite_TimeTypes": {
+      "endpoint": "getCrewRite_TimeTypes",
+      "service": "CrewRite_ORDS",
+      "path": "response"
+    },
+    "@decorators.getCREWRITECR_PROJECTS_LOV1_0GetProjects": {
+      "endpoint": "getCREWRITECR_PROJECTS_LOV1_0GetProjects",
+      "service": "CrewRite_OIC",
+      "path": "response"
+    },
+    "@decorators.getCrewRiteCrewResourcesResponse": {
+      "endpoint": "getCrewRite_CrewResources",
+      "service": "CrewRite_ORDS",
+      "path": "response"
+    },
+    "@decorators.getCREWRITECRPROJECTSLOV1GetProjectsResponse": {
+      "endpoint": "getCREWRITECR_PROJECTS_LOV1_0GetProjects",
+      "service": "CrewRite_OIC",
+      "path": "response"
+    },
+    "@decorators.getCrewRiteDepartmentDetailsResponse": {
+      "endpoint": "getCrewRite_DepartmentDetails",
+      "service": "CrewRite_ORDS",
+      "path": "response"
+    },
+    "@decorators.getCrewRiteProjectSearch2Response": {
+      "endpoint": "getCrewRite_ProjectSearch2",
+      "service": "CrewRite_ORDS",
+      "path": "response"
+    },
+    "@decorators.getCrewRiteProjectSearch2Response2": {
+      "endpoint": "getCrewRite_ProjectSearch2",
+      "service": "CrewRite_ORDS",
+      "path": "response"
+    },
+    "@decorators.getCrewRiteProjectSearch2Response3": {
+      "endpoint": "getCrewRite_ProjectSearch2",
+      "service": "CrewRite_ORDS",
+      "path": "response"
+    },
+    "@decorators.getCrewRiteProjectSearch2Response4": {
+      "endpoint": "getCrewRite_ProjectSearch2",
+      "service": "CrewRite_ORDS",
+      "path": "response"
+    },
+    "@decorators.getCrewRiteTimeEntryCombinationsResponse": {
+      "endpoint": "getCrewRite_TimeEntryCombinations",
+      "service": "CrewRite_ORDS",
+      "path": "response"
+    },
+    "@decorators.getCrewRiteTimeTypesResponse": {
+      "endpoint": "getCrewRite_TimeTypes",
+      "service": "CrewRite_ORDS",
+      "path": "response"
+    },
+    "@decorators.getGetCustomerDetailsResponse": {
+      "endpoint": "getGetCustomerDetails",
+      "service": "TimeRite_Ords_Service",
+      "path": "response"
+    },
+    "@decorators.getGetTimeSheetTbl": {
+      "endpoint": "getGetTimeSheetTbl",
+      "service": "TimeRite_Ords_Service",
+      "path": "response-_-items[0]"
+    },
+    "@decorators.getProjectIdChildTasks": {
+      "endpoint": "getProjectIdChildTasks",
+      "service": "FSCM_REST_API",
+      "path": "response"
+    },
+    "@decorators.getProjectIdChildTasksResponse": {
+      "endpoint": "getProjectIdChildTasks",
+      "service": "FSCM_REST_API",
+      "path": "response"
+    },
+    "@decorators.getProjectsLOV": {
+      "endpoint": "getProjectsLOV",
+      "service": "FSCM_REST_API",
+      "path": "response"
+    },
+    "@decorators.getProjectsValuesLOV": {
+      "endpoint": "getProjectsLOV",
+      "service": "FSCM_REST_API",
+      "path": "response-_-items[0]"
+    },
+    "@decorators.resourcesType": {
+      "endpoint": "getCrewRite_CrewResources",
+      "service": "CrewRite_ORDS",
+      "path": "response-_-items[0]"
+    },
+    "getCrewRite_CrewResources": {
+      "active_flag": "string",
+      "addressline1": "any",
+      "addressline2": "any",
+      "approver_comments": "any",
+      "assignment_id": "any",
+      "assignment_number": "string",
+      "bill_rate": "string",
+      "bonus_amount": "any",
+      "bonus_flag": "string",
+      "bonus_quantity": "any",
+      "bonus_rate": "string",
+      "city": "any",
+      "comments": "any",
+      "contract_id": "number",
+      "country": "any",
+      "craft_override": "any",
+      "created_by": "string",
+      "creation_date": "string",
+      "crew_date": "any",
+      "crew_day": "any",
+      "crew_setup_lines_rownum": "number",
+      "crew_week": "any",
+      "crewsetup_id": "number",
+      "crewsetup_line_id": "number",
+      "customer_id": "number",
+      "data_source": "any",
+      "demobilization": "any",
+      "effective_end_date": "string",
+      "effective_start_date": "string",
+      "end_date": "string",
+      "equipment_assigned_flag": "any",
+      "equipment_assigned_id": "any",
+      "equipment_category": "string",
+      "equipment_number": "any",
+      "equipment_rate": "string",
+      "expenditure_type_id": "number",
+      "expenditure_type_name": "string",
+      "fri_in_time": "string",
+      "fri_out_time": "string",
+      "fri_total_hours": "string",
+      "hours_validation": "any",
+      "installed_quantity": "any",
+      "last_updated_by": "string",
+      "last_updated_date": "string",
+      "latitude": "any",
+      "location": "any",
+      "longitude": "any",
+      "milage": "any",
+      "mobilization": "any",
+      "mon_in_time": "string",
+      "mon_out_time": "string",
+      "mon_total_hours": "string",
+      "non_labor_resource_org": "any",
+      "non_labour_resource": "any",
+      "ot_rate": "string",
+      "ot_threshold_limit": "any",
+      "pay_rate": "string",
+      "per_diem_amount": "any",
+      "per_diem_rate": "string",
+      "perdiem_flag": "string",
+      "perdiem_quantity": "any",
+      "po": "any",
+      "po_line": "any",
+      "postalcode": "any",
+      "project_assigned": "string",
+      "project_id": "number",
+      "project_name": "any",
+      "project_number": "string",
+      "project_role": "any",
+      "rate": "any",
+      "resource_id": "number",
+      "resource_location": "string",
+      "resource_name": "string",
+      "resource_number": "string",
+      "resource_role": "string",
+      "resource_type": "string",
+      "sat_in_time": "string",
+      "sat_out_time": "string",
+      "sat_total_hours": "string",
+      "start_date": "string",
+      "sub_pay": "any",
+      "sun_in_time": "string",
+      "sun_out_time": "string",
+      "sun_total_hours": "string",
+      "task_id": "number",
+      "task_name": "string",
+      "task_number": "any",
+      "thu_in_time": "string",
+      "thu_out_time": "string",
+      "thu_total_hours": "string",
+      "time_entry_id": "any",
+      "time_entry_mode": "string",
+      "time_type": "string",
+      "timecard_balancing": "any",
+      "total_hours": "string",
+      "tue_in_time": "string",
+      "tue_out_time": "string",
+      "tue_total_hours": "string",
+      "wed_in_time": "string",
+      "wed_out_time": "string",
+      "wed_total_hours": "string",
+      "week_end_date": "any",
+      "week_start_date": "any",
+      "cost_category": "string",
+      "cost_center": "string",
+      "emp_location": "string",
+      "combination_id": "any",
+      "isNew": "string",
+      "project": "string",
+      "shift": "string",
+      "department": "string",
+      "combination_name": "string",
+      "work_package": "string"
+
+    },
+    "getCrewRite_DepartmentDetails": {
+      "items": [
+        {
+          "department": "string"
+        }
+      ]
+    },
+    "getCrewRite_TimeEntry": {
+      "action": "string",
+      "active_flag": "any",
+      "actual_date": "any",
+      "approver_comments": "any",
+      "assignment_number": "string",
+      "attribute1": "any",
+      "attribute2": "any",
+      "attribute3": "any",
+      "attribute4": "any",
+      "attribute5": "any",
+      "bill_rate": "string",
+      "bonus_amount": "any",
+      "bonus_rate": "any",
+      "cloud_timecard_status": "any",
+      "combination_id": "number",
+      "combination_name": "string",
+      "comments": "any",
+      "contract_id": "number",
+      "cost_center": "string",
+      "craft_override": "any",
+      "created_by": "string",
+      "creation_date": "string",
+      "crew_date": "string",
+      "crew_day": "any",
+      "crew_week": "string",
+      "crewsetup_id": "number",
+      "crewsetup_line_id": "number",
+      "customer_id": "number",
+      "data_source": "any",
+      "demobilization": "string",
+      "department": "string",
+      "emp_location": "string",
+      "equipment_assigned_flag": "any",
+      "equipment_assigned_id": "any",
+      "equipment_category": "string",
+      "equipment_rate": "string",
+      "fri_in_time": "any",
+      "fri_out_time": "any",
+      "fri_total_hours": "any",
+      "isNew": "string",
+      "last_updated_by": "string",
+      "last_updated_date": "string",
+      "milage": "string",
+      "mobilization": "string",
+      "mon_in_time": "any",
+      "mon_out_time": "any",
+      "mon_total_hours": "any",
+      "ot_rate": "string",
+      "part_date": "any",
+      "pay_rate": "string",
+      "payroll_flag": "string",
+      "per_diem_amount": "string",
+      "per_diem_rate": "any",
+      "person_id": "string",
+      "po": "any",
+      "po_line": "any",
+      "project_id": "number",
+      "project_name": "string",
+      "project_number": "string",
+      "rate": "any",
+      "reference_time_entry_id": "any",
+      "resource_name": "string",
+      "resource_number": "string",
+      "resource_role": "string",
+      "resource_type": "string",
+      "sat_in_time": "any",
+      "sat_out_time": "any",
+      "sat_total_hours": "any",
+      "secondary_timekeeper_id": "string",
+      "shift": "string",
+      "source": "any",
+      "start_time": "any",
+      "status": "string",
+      "stop_time": "any",
+      "sun_in_time": "any",
+      "sun_out_time": "any",
+      "sun_total_hours": "any",
+      "supervisor_id": "string",
+      "task_id": "number",
+      "task_name": "string",
+      "task_number": "string",
+      "thu_in_time": "any",
+      "thu_out_time": "any",
+      "thu_total_hours": "any",
+      "time_entry_id": "number",
+      "time_entry_mode": "string",
+      "time_entry_type": "any",
+      "time_keeper_id": "string",
+      "time_type": "string",
+      "timerecord_id": "any",
+      "timerecord_version": "any",
+      "timesheet_week_id": "number",
+      "total_hours": "number",
+      "tue_in_time": "any",
+      "tue_out_time": "any",
+      "tue_total_hours": "any",
+      "uom": "string",
+      "wed_in_time": "any",
+      "wed_out_time": "any",
+      "wed_total_hours": "any",
+      "week_end_date": "string",
+      "week_start_date": "string",
+      "work_location": "string",
+      "work_package": "string",
+      "work_schedule": "string"
+
+    },
+    "getCrewRite_TimeEntryCombinations": {
+      "actions": "any",
+      "attribute1": "any",
+      "attribute10": "any",
+      "attribute2": "any",
+      "attribute3": "any",
+      "attribute4": "any",
+      "attribute5": "any",
+      "attribute6": "any",
+      "attribute7": "any",
+      "attribute8": "any",
+      "attribute9": "any",
+      "combination_id": "number",
+      "combination_name": "string",
+      "cost_center": "string",
+      "created_by": "any",
+      "creation_date": "string",
+      "crew_name": "string",
+      "crewsetup_id": "number",
+      "department": "string",
+      "emp_location": "string",
+      "end_date": "any",
+      "hours": "string",
+      "last_update_date": "string",
+      "last_updated_by": "any",
+      "project_id": "number",
+      "project_name": "string",
+      "project_number": "string",
+      "shift": "string",
+      "start_date": "any",
+      "task_date": "any",
+      "task_id": "number",
+      "task_name": "string",
+      "task_number": "string",
+      "time_type": "string",
+      "work_package": "string",
+      "isNew": "string"
+
+    },
+    "getCrewRite_TimeTypes": {
+      "items": [
+        {
+          "time_type_name": "string"
+        }
+      ]
+    },
+    "getCREWRITECR_PROJECTS_LOV1_0GetProjects": {
+      "items": [
+        {
+          "businessUnitName": "string",
+          "completionDate": "string",
+          "enabledFlag": "string",
+          "name": "string",
+          "number": "string",
+          "orgId": "string",
+          "projectId": "string",
+          "projectName": "string",
+          "projectStatusCode": "string",
+          "projectTypeId": "string",
+          "startDate": "string"
+        }
+      ]
+    },
+    "getCrewRiteCrewResourcesResponse": {
+      "items": [
+        {
+          "resource_id": "number",
+          "resource_location": "string",
+          "resource_name": "string",
+          "resource_number": "string",
+          "resource_role": "string",
+          "resource_type": "string"
+        }
+      ]
+    },
+    "getCREWRITECRPROJECTSLOV1GetProjectsResponse": {
+      "items": [
+        {
+          "businessUnitName": "string",
+          "completionDate": "string",
+          "enabledFlag": "string",
+          "name": "string",
+          "number": "string",
+          "orgId": "string",
+          "projectId": "string",
+          "projectName": "string",
+          "projectStatusCode": "string",
+          "projectTypeId": "string",
+          "startDate": "string"
+        }
+      ]
+    },
+    "getCrewRiteDepartmentDetailsResponse": {
+      "items": [
+        {
+          "department": "string"
+        }
+      ]
+    },
+    "getCrewRiteProjectSearch2Response": {
+      "items": [
+        {
+          "bonus_rate": "any",
+          "client_erp": "any",
+          "contract_id": "number",
+          "contract_number": "string",
+          "contract_type": "string",
+          "created_by": "any",
+          "creation_date": "string",
+          "description": "string",
+          "end_time": "any",
+          "last_update_date": "any",
+          "project_id": "number",
+          "project_name": "string",
+          "project_number": "string",
+          "project_status_code": "string",
+          "safety_bonus_amount": "any",
+          "safety_bonus_hours": "any",
+          "safety_bonus_rate": "any",
+          "start_time": "any"
+        }
+      ]
+    },
+    "getCrewRiteProjectSearch2Response2": {
+      "items": [
+        {
+          "project_id": "number",
+          "project_name": "string",
+          "project_number": "string",
+          "project_status_code": "string"
+        }
+      ]
+    },
+    "getCrewRiteProjectSearch2Response3": {
+      "items": [
+        {
+          "project_id": "number",
+          "project_name": "string",
+          "project_number": "string"
+        }
+      ]
+    },
+    "getCrewRiteProjectSearch2Response4": {
+      "items": [
+        {
+          "project_id": "number",
+          "project_name": "string",
+          "project_number": "string"
+        }
+      ]
+    },
+    "getCrewRiteTimeEntryCombinationsResponse": {
+      "items": [
+        {
+          "combination_id": "number",
+          "combination_name": "string"
+        }
+      ]
+    },
+    "getCrewRiteTimeTypesResponse": {
+      "items": [
+        {
+          "time_type_name": "string"
+        }
+      ]
+    },
+    "getGetCustomerDetailsResponse": {
+      "items": [
+        {
+          "contract_number": "string",
+          "crew_day": "any",
+          "crew_end_week": "string",
+          "crew_measure": "string",
+          "crew_name": "string",
+          "crew_start_week": "string",
+          "crewsetup_id": "number",
+          "customer_name": "string",
+          "day": "any",
+          "in_time": "any",
+          "out_time": "any",
+          "project_number": "string"
+        }
+      ]
+    },
+    "getGetTimeSheetTbl": {
+      "active_flag": "string",
+      "amount": "any",
+      "amount_type": "any",
+      "assignment_number": "string",
+      "bill_rate": "string",
+      "bonus_amount": "any",
+      "bonus_flag": "string",
+      "bonus_quantity": "any",
+      "bonus_rate": "string",
+      "comments": "any",
+      "contract_id": "number",
+      "cost_category": "any",
+      "craft_override": "any",
+      "crew_setup_lines_rownum": "number",
+      "crew_week": "any",
+      "crewsetup_id": "number",
+      "crewsetup_line_id": "number",
+      "customer_id": "number",
+      "department": "any",
+      "effective_end_date": "string",
+      "effective_start_date": "string",
+      "end_date": "string",
+      "equipment_category": "string",
+      "equipment_rate": "string",
+      "ext_time_diff_flag": "string",
+      "fri_in_time": "string",
+      "fri_out_time": "string",
+      "fri_total_hours": "number",
+      "hours_validation": "string",
+      "input_date": "any",
+      "installed_quantity": "any",
+      "location": "any",
+      "millage": "any",
+      "mon_in_time": "string",
+      "mon_out_time": "string",
+      "mon_total_hours": "number",
+      "ot_rate": "string",
+      "pay_rate": "string",
+      "per_diem_amount": "any",
+      "per_diem_rate": "string",
+      "perdiem_flag": "string",
+      "perdiem_quantity": "any",
+      "phase": "any",
+      "po": "any",
+      "po_line": "any",
+      "primary_timekeeper_id": "number",
+      "project_id": "number",
+      "project_name": "string",
+      "project_number": "string",
+      "resource_location": "string",
+      "resource_name": "string",
+      "resource_number": "string",
+      "resource_role": "any",
+      "resource_type": "string",
+      "sat_in_time": "string",
+      "sat_out_time": "string",
+      "sat_total_hours": "number",
+      "secondary_timekeeper_id": "number",
+      "shift": "any",
+      "start_date": "string",
+      "sun_in_time": "string",
+      "sun_out_time": "string",
+      "sun_total_hours": "number",
+      "supervisor": "string",
+      "task_id": "number",
+      "task_name": "string",
+      "thu_in_time": "string",
+      "thu_out_time": "string",
+      "thu_total_hours": "number",
+      "time_type": "string",
+      "total_hours": "number",
+      "tue_in_time": "string",
+      "tue_out_time": "string",
+      "tue_total_hours": "number",
+      "wed_in_time": "string",
+      "wed_out_time": "string",
+      "wed_total_hours": "number",
+      "week_end_date": "any",
+      "week_start_date": "any",
+      "work_package": "any"
+
+    },
+    "getProjectIdChildTasks": {
+      "items": [
+        {
+          "TaskId": "number",
+          "TaskName": "string",
+          "TaskNumber": "string"
+        }
+      ]
+    },
+    "getProjectIdChildTasksResponse": {
+      "items": [
+        {
+          "TaskFinishDate": "string",
+          "TaskId": "number",
+          "TaskName": "string",
+          "TaskNumber": "string"
+        }
+      ]
+    },
+    "getProjectsLOV": {
+      "items": [
+        {
+          "ProjectId": "number",
+          "ProjectName": "string",
+          "ProjectNumber": "string",
+          "ProjectStatus": "string"
+        }
+      ]
+    },
+    "getProjectsValuesLOV": {
+      "ProjectId": "number",
+      "ProjectName": "string",
+      "ProjectNumber": "string",
+      "ProjectStatus": "string"
+    },
+    "resourcesType": {
+      "resource_id": "number",
+      "resource_location": "string",
+      "resource_name": "string",
+      "resource_number": "string",
+      "resource_role": "string",
+      "resource_type": "string"
+    }
+
+  },
+  "eventListeners": {
+    "addCombinationAction": {
+      "chains": [
+        {
+          "chain": "AddCombinationActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "addEmployeeEntryAction": {
+      "chains": [
+        {
+          "chain": "AddEntryActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "searchButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction10": {
+      "chains": [
+        {
+          "chain": "ButtonActionChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction11": {
+      "chains": [
+        {
+          "chain": "timeEntryDialogCloseActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction12": {
+      "chains": [
+        {
+          "chain": "submitTimeEntryActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction13": {
+      "chains": [
+        {
+          "chain": "createAndNewButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction14": {
+      "chains": [
+        {
+          "chain": "ActionButtonChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "buttonAction15": {
+      "chains": [
+        {
+          "chain": "defultButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction16": {
+      "chains": [
+        {
+          "chain": "saveCombinationButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction17": {
+      "chains": [
+        {
+          "chain": "editButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "buttonAction18": {
+      "chains": [
+        {
+          "chain": "updateTimeEntryButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "resetbuttonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction3": {
+      "chains": [
+        {
+          "chain": "DefaultActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "buttonAction4": {
+      "chains": [
+        {
+          "chain": "CancelActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction5": {
+      "chains": [
+        {
+          "chain": "AssignActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction6": {
+      "chains": [
+        {
+          "chain": "CancelDeleteActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction7": {
+      "chains": [
+        {
+          "chain": "DeleteActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction8": {
+      "chains": [
+        {
+          "chain": "SubmitButtonActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction9": {
+      "chains": [
+        {
+          "chain": "saveCustomDataButton",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "iconClick": {
+      "chains": [
+        {
+          "chain": "DeleteClickChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "iconClick2": {
+      "chains": [
+        {
+          "chain": "SaveIconClickChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "iconClick3": {
+      "chains": [
+        {
+          "chain": "deleteEmpTableClickChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "iconClick4": {
+      "chains": [
+        {
+          "chain": "IconClickChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "key": "{{ $current.key }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem": {
+      "chains": [
+        {
+          "chain": "crewNameValueChangeChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem10": {
+      "chains": [
+        {
+          "chain": "TaskSelectValueItemChangeChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem2": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{ $current.key }}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem3": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{ $current.key }}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem4": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain2",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{ $current.key }}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem5": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain3",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{ $current.key }}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem6": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain4",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{ $current.key }}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem7": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain5",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{ $current.key }}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}",
+            "index": "{{ $current.index }}",
+            "current": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem8": {
+      "chains": [
+        {
+          "chain": "resourceNameValueChangeChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "selectValueItem9": {
+      "chains": [
+        {
+          "chain": "projectValueChangeChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "tableBeforeRowEdit": {
+      "chains": [
+        {
+          "chain": "TableBeforeRowEditChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "accept": "{{$event.detail.accept}}",
+            "rowContext": "{{$event.detail.rowContext}}",
+            "rowKey": "{{$event.detail.rowContext.status.rowKey}}",
+            "rowIndex": "{{$event.detail.rowContext.status.rowIndex}}",
+            "rowData": "{{$event.detail.rowContext.componentElement.getDataForVisibleRow($event.detail.rowContext.status.rowIndex).data}}"
+          }
+        }
+      ]
+    },
+    "tableBeforeRowEdit2": {
+      "chains": [
+        {
+          "chain": "TableBeforeRowEditChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "accept": "{{$event.detail.accept}}",
+            "rowContext": "{{$event.detail.rowContext}}",
+            "rowKey": "{{$event.detail.rowContext.status.rowKey}}",
+            "rowIndex": "{{$event.detail.rowContext.status.rowIndex}}",
+            "rowData": "{{$event.detail.rowContext.componentElement.getDataForVisibleRow($event.detail.rowContext.status.rowIndex).data}}"
+          }
+        }
+      ]
+    },
+    "tableBeforeRowEditEnd": {
+      "chains": [
+        {
+          "chain": "TableBeforeRowEditEndChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "accept": "{{$event.detail.accept}}",
+            "setUpdatedItem": "{{$event.detail.setUpdatedItem}}",
+            "rowContext": "{{$event.detail.rowContext}}",
+            "cancelEdit": "{{$event.detail.cancelEdit}}",
+            "rowKey": "{{$event.detail.rowContext.status.rowKey}}",
+            "rowIndex": "{{$event.detail.rowContext.status.rowIndex}}",
+            "rowData": "{{$event.detail.rowContext.componentElement.getDataForVisibleRow($event.detail.rowContext.status.rowIndex).data}}"
+          }
+        }
+      ]
+    },
+    "tableBeforeRowEditEnd2": {
+      "chains": [
+        {
+          "chain": "TableBeforeRowEditEndChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "accept": "{{$event.detail.accept}}",
+            "setUpdatedItem": "{{$event.detail.setUpdatedItem}}",
+            "rowContext": "{{$event.detail.rowContext}}",
+            "cancelEdit": "{{$event.detail.cancelEdit}}",
+            "rowKey": "{{$event.detail.rowContext.status.rowKey}}",
+            "rowIndex": "{{$event.detail.rowContext.status.rowIndex}}",
+            "rowData": "{{$event.detail.rowContext.componentElement.getDataForVisibleRow($event.detail.rowContext.status.rowIndex).data}}"
+          }
+        }
+      ]
+    },
+    "tableSelected": {
+      "chains": [
+        {
+          "chain": "TableSelectedChangeChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "keys": "{{ $event.detail.value.row.values ? Array.from($event.detail.value.row.values()) : [] }}",
+            "selected": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "tableSelected2": {
+      "chains": [
+        {
+          "chain": "TableSelectedChangeChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "keys": "{{ $event.detail.value.row.values ? Array.from($event.detail.value.row.values()) : [] }}",
+            "selected": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "parameters": {},
+          "chain": "vbEnterListener"
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-popup": {
+        "path": "ojs/ojpopup"
+      },
+      "oj-progress-bar": {
+        "path": "ojs/ojprogress-bar"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-sp-collection-container": {
+        "path": "oj-sp/collection-container/loader"
+      },
+      "oj-sp-welcome-page": {
+        "path": "oj-sp/welcome-page/loader"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      },
+      "oj-validation-group": {
+        "path": "ojs/ojvalidationgroup"
+      }
+
+   }
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "title": "crew comination time entry",
+  "description": "",
+  "variables": {
+    "columns": {
+      "type": "object[]",
+      "defaultValue": [
+        {
+          "key": "A"
+        },
+{
+          "key": "B"
+        },
+        {
+          "key": "C"
+        }        ,
+        {
+          "key": "D"
+        }        ,
+        {
+          "key": "E"
+        }        ,
+        {
+          "key": "F"
+        }
+      ]
+    },
+    "combinationRows": {
+      "type": "object[]"
+    },
+    "combinationValues": {
+      "type": "object",
+      "defaultValue": {
+        "A": {
+          "projectId": null,
+          "taskId": null,
+          "shift": "",
+          "workPackage": "",
+          "location": ""
+
+        },
+        "B": {
+          "projectId": null,
+          "taskId": null,
+          "shift": "",
+          "workPackage": "",
+          "location": ""
+
+        },
+        "C": {
+          "projectId": null,
+          "taskId": null,
+          "shift": "",
+          "workPackage": "",
+          "location": ""
+        },
+        "D": {
+          "projectId": null,
+          "taskId": null,
+          "shift": "",
+          "workPackage": "",
+          "location": ""
+        },
+        "E": {
+          "projectId": null,
+          "taskId": null,
+          "shift": "",
+          "workPackage": "",
+          "location": ""
+        },
+        "F": {
+          "projectId": null,
+          "taskId": null,
+          "shift": "",
+          "workPackage": "",
+          "location": ""
+        }
+      }
+    },
+    "data": {
+      "type": "any"
+    },
+    "definitionRows": {
+      "type": "object[]",
+      "defaultValue": [
+        {
+          "type": "project",
+          "label": "Project"
+        },
+        {
+          "type": "task",
+          "label": "Task"
+        },
+        {
+          "type": "shift",
+          "label": "Shift"
+        },
+        {
+          "type": "workPackage",
+          "label": "Work Package"
+        },
+        {
+          "type": "location",
+          "label": "Location"
+        }
+      ]
+    },
+    "getCrewRiteProjectSearch2ListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "CrewRite_ORDS/getCrewRite_ProjectSearch2",
+        "keyAttributes": "project_name",
+        "itemsPath": "items",
+        "responseType": "getCrewRiteProjectSearch2Response",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "project_name"
+          ]
+        }
+      }
+    },
+    "illustrationBackground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-bg-01.png"
+    },
+    "illustrationForeground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-fg-01.png"
+    },
+    "imageStretch": {
+      "type": "string",
+      "defaultValue": "none"
+    },
+    "mobileImage": {
+      "type": "string",
+      "defaultValue": "on"
+    },
+    "projectADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "getCrewRite_ProjectSearch2",
+        "keyAttributes": "project_id"
+      }
+    },
+    "taskADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "itemType": "getProjectIdChildTasks",
+        "keyAttributes": "TaskName"
+      }
+    },
+    "taskDPMap": {
+      "type": "object"
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getCrewRite_ProjectSearch2": {
+      "endpoint": "getCrewRite_ProjectSearch2",
+      "service": "CrewRite_ORDS",
+      "path": "response-_-items[0]"
+    },
+    "@decorators.getCrewRiteProjectSearch2Response": {
+      "endpoint": "getCrewRite_ProjectSearch2",
+      "service": "CrewRite_ORDS",
+      "path": "response"
+    },
+    "@decorators.getProjectIdChildTasks": {
+      "endpoint": "getProjectIdChildTasks",
+      "service": "FSCM_REST_API",
+      "path": "response-_-items[0]"
+    },
+    "getCrewRite_ProjectSearch2": {
+      "project_id": "number",
+      "project_name": "string",
+      "project_number": "string"
+    },
+    "getCrewRiteProjectSearch2Response": {
+      "items": [
+        {
+          "project_id": "number",
+          "project_name": "string",
+          "project_number": "string"
+        }
+      ]
+    },
+    "getProjectIdChildTasks": {
+      "TaskFinishDate": "string",
+      "TaskId": "number",
+      "TaskName": "string",
+      "TaskNumber": "string"
+    }
+  },
+  "eventListeners": {
+    "buttonAction": {
+      "chains": [
+        {
+          "chain": "AddColumn",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "buttonAction2": {
+      "chains": [
+        {
+          "chain": "AddColumnActionChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "originalEvent": "{{$event.detail.originalEvent}}"
+          }
+        }
+      ]
+    },
+    "selectValueItem": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}",
+            "current": "[[ $current ]]"
+          }
+        }
+      ]
+    },
+    "selectValueItem2": {
+      "chains": [
+        {
+          "chain": "SelectValueItemChangeChain1",
+          "parameters": {
+            "event": "{{$event}}",
+            "previousValue": "{{$event.detail.previousValue}}",
+            "value": "{{$event.detail.value}}",
+            "updatedFrom": "{{$event.detail.updatedFrom}}",
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "valueItem": "{{ $event.detail.value }}",
+            "colkey": "{{ $current }}"
+          }
+        }
+      ]
+    },
+    "vbEnter": {
+      "chains": [
+        {
+          "chain": "PageVbEnterChain",
+          "parameters": {
+            "event": "{{$event}}"
+          }
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-combobox-one": {
+        "path": "ojs/ojselectcombobox"
+      },
+      "oj-data-grid": {
+        "path": "ojs/ojdatagrid"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-file-picker": {
+        "path": "ojs/ojfilepicker"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      },
+      "oj-popup": {
+        "path": "ojs/ojpopup"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-sp-welcome-page": {
+        "path": "oj-sp/welcome-page/loader"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-text-area": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      }
+
+   },
+    "modules": {
+      "ojValidationBase": {
+        "path": "ojs/ojvalidation-base"
+      },
+      "ojValidationDateTime": {
+        "path": "ojs/ojvalidation-datetime"
+      }
+    }
+  }
+}

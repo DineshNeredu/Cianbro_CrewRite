@@ -1,0 +1,80 @@
+<oj-sp-welcome-page
+  id="oj-sp-wp1"
+  page-title="Time Entry Design"
+  display-options.responsive-padding="on"
+   illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  background-color="dark-pebble">
+
+  <div class="oj-flex oj-sm-flex-direction-column">
+
+    <!-- ===================== -->
+    <!-- Combination Definitions -->
+    <!-- ===================== -->
+    <div class="oj-panel oj-sm-margin-4x-bottom">
+
+      <!-- Header -->
+      <div class="oj-flex oj-sm-align-items-center oj-sm-padding-2x"
+           style="background-color:#504f4d;color:#ffffff;">
+        <span class="oj-ux-ico-settings oj-sm-margin-2x-end"></span>
+        <span style="font-weight:500;">Combination Definitions</span>
+        <div class="oj-flex-item"></div>
+
+        <oj-button chroming="callToAction" class="oj-button-sm oj-sm-margin-2x-end">
+          <span slot="startIcon" class="oj-ux-ico-plus"></span>
+          Add Column
+        </oj-button>
+
+        <oj-button chroming="callToAction" class="oj-button-sm">
+          <span slot="startIcon" class="oj-ux-ico-plus"></span>
+          Add Row
+        </oj-button>
+      </div>
+
+      <!-- Combination Table -->
+      <oj-table
+        class="oj-flex-item oj-sm-12 oj-md-12"
+        edit-mode="rowEdit">
+      </oj-table>
+
+    </div>
+
+    <!-- ===================== -->
+    <!-- Employee Time Entry -->
+    <!-- ===================== -->
+    <div class="oj-panel">
+
+      <!-- Header -->
+      <div class="oj-flex oj-sm-align-items-center oj-sm-padding-2x"
+           style="background-color:#504f4d;color:#ffffff;">
+        <span class="oj-ux-ico-people oj-sm-margin-2x-end"></span>
+        <span style="font-weight:500;">Employee Time Entry</span>
+        <div class="oj-flex-item"></div>
+
+        <oj-button chroming="callToAction" class="oj-button-sm">
+          <span slot="startIcon" class="oj-ux-ico-plus"></span>
+          Add Row
+        </oj-button>
+      </div>
+
+      <!-- Employee Table -->
+      <oj-table
+        id="employeeTable"
+        class="oj-flex-item oj-sm-12 oj-md-12"
+        edit-mode="rowEdit">
+      </oj-table>
+
+    </div>
+
+    <!-- ===================== -->
+    <!-- Save Button -->
+    <!-- ===================== -->
+    <div class="oj-flex oj-sm-justify-content-center oj-sm-margin-4x-top">
+      <oj-button chroming="callToAction">
+        Save All Data
+      </oj-button>
+    </div>
+
+  </div>
+
+</oj-sp-welcome-page>

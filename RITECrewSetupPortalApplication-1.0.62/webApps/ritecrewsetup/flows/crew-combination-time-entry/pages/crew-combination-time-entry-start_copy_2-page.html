@@ -1,0 +1,97 @@
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.image-stretch="[[ $page.variables.imageStretch ]]"
+  display-options.mobile-image="[[ $page.variables.mobileImage ]]" display-options.responsive-padding="on"
+  page-title="Crew Combination Time Entry" background-color="dark-pebble">
+
+
+ <div class="oj-flex">
+    <div class="oj-flex-item oj-sm-10" style="font-size:20px;font-weight:600; padding-left:10px;">
+      <span class="oj-ux-ico-settings" style="veritcal-align:middle"></span> Combination Defination
+    </div>
+    <div class="oj-flex-item oj-sm-2">
+      <oj-button label="Add Column" chroming="callToAction" on-oj-action="[[$listeners.buttonAction2]]">
+        <span slot="startIcon" class="oj-ux-ico-plus"></span>
+      </oj-button>
+      <oj-button label="Add Row" chroming="callToAction">
+        <span slot="startIcon" class="oj-ux-ico-plus"></span>
+      </oj-button>
+
+    </div>
+  </div>
+
+
+<table class="combination-table" id="dynamic">
+
+  <thead>
+    <tr>
+     
+      <oj-bind-for-each data="[[ $variables.columns ]]">
+        <template data-oj-as="col">
+          <th>
+            <oj-bind-text value="[[ col.data.key ]]"></oj-bind-text>
+          </th>
+        </template>
+      </oj-bind-for-each>
+    </tr>
+  </thead>
+
+  <tbody>
+    <oj-bind-for-each data="[[ $variables.definitionRows ]]">
+      <template data-oj-as="row">
+
+        <tr>
+
+          <!-- Row label -->
+          <td>
+            <oj-bind-text value="[[ row.data.label ]]"></oj-bind-text>
+          </td>
+
+          <!-- Cells -->
+          <oj-bind-for-each data="[[ $variables.columns ]]">
+            <template data-oj-as="col">
+
+              <td>
+
+                <!-- Project row -->
+                <oj-bind-if test="[[ row.data.type === 'project' ]]">
+                  <oj-select-single  value="{{ $variables.combinationValues[col.data.key].projectId }}"
+                    data="[[ $variables.projectADP ]]" item-text="project_name"  item-value="project_id" style="width:150px"
+                    on-value-item-changed="[[$listeners.selectValueItem2]]">
+                  </oj-select-single>
+                </oj-bind-if>
+
+                <!-- Task row -->
+                <oj-bind-if test="[[ row.data.type === 'task' ]]">
+                  <oj-select-single value="{{ $variables.combinationValues[col.data.key].task }}"
+                    data="[[ $variables.taskDPMap[col.data.key] ]]" item-text="TaskName"
+                    style="width:150px">
+                  </oj-select-single>
+                </oj-bind-if>
+                <oj-bind-if test="[[ row.data.type === 'shift' || row.data.type === 'workPackage' || row.data.type === 'location' ]]">
+                  <oj-input-text value="{{ $variables.combinationValues[col.data.key].shift }}" style="width:150px"></oj-input-text>
+                </oj-bind-if>
+
+
+              </td>
+
+            </template>
+          </oj-bind-for-each>
+
+        </tr>
+
+      </template>
+    </oj-bind-for-each>
+  </tbody>
+
+</table>
+
+
+
+
+
+
+
+
+
+</oj-sp-welcome-page>

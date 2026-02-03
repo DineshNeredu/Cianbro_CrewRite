@@ -1,0 +1,102 @@
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.image-stretch="[[ $page.variables.imageStretch ]]"
+  display-options.mobile-image="[[ $page.variables.mobileImage ]]" display-options.responsive-padding="on"
+  page-title="Crew Time Entry Management" background-color="dark-pebble">
+
+
+    <div class="oj-flex-item oj-flex oj-sm-justify-content-center oj-sm-margin-3x-top">
+          <oj-form-layout label-edge="top" columns="5" style="width:100%" max-columns="5">
+              <oj-select-single label-hint="Crew Name" item-text="crew_name"
+               value="{{ $variables.timeEntryObj.crew_name }}"
+               :title='[[ $application.variables.HelpEnabled ? "Select Crew Name" : "" ]]'
+               data="[[$variables.CrewNameLOVSDP]]" 
+               on-value-item-changed="[[$listeners.selectValueItem]]"></oj-select-single>
+
+
+
+           <oj-select-single label-hint="Week"
+             :title='[[ $application.variables.HelpEnabled ? "Select Date Range" : "" ]]'
+             value="{{ $variables.timeEntryObj.week }}" data="[[ $variables.dateRangeADP ]]" item-text="range"
+             on-value-item-changed="[[$listeners.selectValueItem2]]">
+            </oj-select-single>
+            
+             <oj-select-single label-hint="Status"
+              :title='[[ $application.variables.HelpEnabled ? "Select Status" : "" ]]'
+              value="{{ $variables.timeEntryObj.status }}" item-text="crew_details" data="[[ $variables.crewStatusADP ]]">
+            </oj-select-single>
+
+
+            <oj-select-single label-hint="Day" :title='[[ $application.variables.HelpEnabled ? "Select day" : "" ]]'
+              value="{{ $variables.timeEntryObj.day }}" item-text="value" data="[[ $variables.weekADP ]]">
+              <template slot="itemTemplate" data-oj-as="item">
+                <div>
+                  <div>
+                    <oj-bind-text value="[[item.data.label]]"></oj-bind-text>
+                  </div>
+            
+                  <div>
+                    <oj-bind-text value="[[item.data.value]]"></oj-bind-text>
+                  </div>
+                </div>
+                </div>
+            
+              </template>
+            </oj-select-single>
+
+            
+            
+
+           
+      
+            <div class="oj-flex-item oj-sm-margin-2x-end oj-sm-flex-initial" style="margin-top:20px;">
+              <oj-button chroming="callToAction" label="Search" id="search" 
+                class="oj-button-sm" on-oj-action="[[$listeners.searchAction]]"></oj-button>
+            </div>
+      
+          </oj-form-layout>
+        </div>
+        <div class="oj-flex-item oj-flex oj-sm-justify-content-center oj-sm-margin-3x-top">
+          <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12"
+            data="[[ $variables.timeEntryADP ]]" style="margin:10px;"
+            columns='[[$variables.columns]]'>
+            <template slot="sno">
+              <oj-bind-text value="[[$current.index + 1]]"></oj-bind-text>
+            </template>
+
+            <template slot="hpyerlink">
+              <span :class="[[$functions.getColorCodes($current.data)]]" style="text-decoration:underline;cursor:pointer" on-click="[[$listeners.spanClick]]"><oj-bind-text value="[[$current.data]]"></oj-bind-text></span>
+            </template>
+            
+            </oj-table>
+
+          
+        </div>
+
+</oj-sp-welcome-page>
+<oj-dialog dialog-title="Time Entry Management" style="width:50vw" id="timeEntryDailog">
+  <div slot="body">
+      <div class="oj-flex" style="margin-top:5px;text-align:right">
+        <oj-button chroming="callToAction" label="Edit Hours" id="Edit" class="oj-button-sm"
+          on-oj-action="[[$listeners.editAction]]"></oj-button>
+      </div>
+     
+
+    <div style="height:10px"></div>
+    <div class="oj-flex">
+     
+      <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-12 oj-md-12"
+        data="[[ $variables.detailsADP ]]"
+        columns='[{"headerText":"Employee Number","field":"employee_number"},{"headerText":"Resource Name","field":"resource_name"},{"headerText":"Total Hours","field":"total_hours"},{"headerText":"Status","field":"status"}]'></oj-table>      
+    </div>
+  </div>
+  <div slot="footer">
+    
+
+    <oj-button chroming="callToAction" label="Close" id="Close" class="oj-button-sm"
+      on-oj-action="[[$listeners.closeAction]]"></oj-button>
+  </div>
+</oj-dialog>
+
+
+

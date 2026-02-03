@@ -1,0 +1,40 @@
+{
+    "items": [
+        {
+            "project_id": 300001550010394,
+            "segment1": "1067",
+            "project_type_id": null,
+            "project_status_code": "APPROVED",
+            "start_date": null,
+            "completion_date": null,
+            "closed_date": null,
+            "enabled_flag": null,
+            "name": "Omaha Water Treatment Plant - WA20051",
+            "description": null,
+            "org_id": null,
+            "project_unit_id": null,
+            "business_unit_name": null,
+            "contract_number": "C1066",
+            "contract_id": null,
+            "project_unique": "C1066--1067-Omaha Water Treatment Plant - WA20051"
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 1,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_ProjectDetails?p_contract_number=C1066"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/CrewRite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_ProjectDetails?p_contract_number=C1066"
+        }
+    ]
+}

@@ -1,0 +1,76 @@
+{
+  "title": "time entry design ",
+  "description": "",
+  "variables": {
+    "illustrationBackground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-bg-01.png"
+    },
+    "illustrationForeground": {
+      "type": "string",
+      "defaultValue": "https://static.oracle.com/cdn/fnd/gallery/2307.0.2/images/illust-welcome-banner-fg-01.png"
+    },
+
+    "allColumns": {
+      "type": "DynamicColumnType",
+      "defaultValue": [
+        { "headerText": "A", "field": "a", "active": true },
+        { "headerText": "B", "field": "b", "active": true },
+        { "headerText": "C", "field": "c", "active": false },
+        { "headerText": "D", "field": "d", "active": false },
+        { "headerText": "E", "field": "e", "active": false },
+        { "headerText": "F", "field": "f", "active": false },
+        { "headerText": "G", "field": "g", "active": false },
+        { "headerText": "H", "field": "h", "active": false },
+        { "headerText": "I", "field": "i", "active": false },
+        { "headerText": "J", "field": "j", "active": false },
+        { "headerText": "K", "field": "k", "active": false },
+        { "headerText": "L", "field": "l", "active": false },
+        { "headerText": "M", "field": "m", "active": false },
+        { "headerText": "N", "field": "n", "active": false },
+        { "headerText": "O", "field": "o", "active": false },
+        { "headerText": "P", "field": "p", "active": false },
+        { "headerText": "Q", "field": "q", "active": false },
+        { "headerText": "R", "field": "r", "active": false },
+        { "headerText": "S", "field": "s", "active": false },
+        { "headerText": "T", "field": "t", "active": false },
+        { "headerText": "U", "field": "u", "active": false },
+        { "headerText": "V", "field": "v", "active": false },
+        { "headerText": "W", "field": "w", "active": false },
+        { "headerText": "X", "field": "x", "active": false },
+        { "headerText": "Y", "field": "y", "active": false },
+        { "headerText": "Z", "field": "z", "active": false }
+      ]
+    },
+
+    "visibleColumns": {
+      "type": "DynamicColumnType"
+    }
+  },
+
+  "metadata": {},
+
+  "types": {
+    "DynamicColumnType": {
+      "active": "boolean",
+      "field": "string",
+      "headerText": "string"
+    }
+  },
+
+  "eventListeners": {},
+
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-sp-welcome-page": {
+        "path": "oj-sp/welcome-page/loader"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      }
+    }
+  }
+}

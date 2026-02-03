@@ -1,0 +1,251 @@
+{
+    "items": [
+        {
+            "expenditure_type_name": "Other Expenses",
+            "expenditure_type_id": 300000101276262,
+            "system_linkage_function": "PJ",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "Overhead",
+            "expenditure_type_id": 300000047429535,
+            "system_linkage_function": "BTC",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "P01.D01.CT02",
+            "expenditure_type_id": 300001776601588,
+            "system_linkage_function": "OT",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "P01.D01.CT02",
+            "expenditure_type_id": 300001776601588,
+            "system_linkage_function": "VI",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "P01.D01.CT03",
+            "expenditure_type_id": 300001776631737,
+            "system_linkage_function": "BTC",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "P01.D01.CT03",
+            "expenditure_type_id": 300001776631737,
+            "system_linkage_function": "PJ",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "P01.D01.CT03",
+            "expenditure_type_id": 300001776631737,
+            "system_linkage_function": "WIP",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "P03.D01.CT01",
+            "expenditure_type_id": 300001776631632,
+            "system_linkage_function": "INV",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "P03.D01.CT04",
+            "expenditure_type_id": 300001776631764,
+            "system_linkage_function": "INV",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "P03.D01.CT04",
+            "expenditure_type_id": 300001776631764,
+            "system_linkage_function": "USG",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "P03.D02.CT04",
+            "expenditure_type_id": 300001776631908,
+            "system_linkage_function": "INV",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "P03.D02.CT04",
+            "expenditure_type_id": 300001776631908,
+            "system_linkage_function": "USG",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "PPM Airfare",
+            "expenditure_type_id": 300000251791395,
+            "system_linkage_function": "ER",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "PPM Airfare",
+            "expenditure_type_id": 300000251791395,
+            "system_linkage_function": "VI",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "PPM Misc",
+            "expenditure_type_id": 300000251791405,
+            "system_linkage_function": "PJ",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "PPM Non-Labor",
+            "expenditure_type_id": 300000251791424,
+            "system_linkage_function": "USG",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "P_Petrol",
+            "expenditure_type_id": 300001778515252,
+            "system_linkage_function": "PJ",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "Pipe Assembly & Welding",
+            "expenditure_type_id": 300001699958315,
+            "system_linkage_function": "PJ",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "Pipe Cutting & Preparation",
+            "expenditure_type_id": 300001699958310,
+            "system_linkage_function": "ST",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "Professional",
+            "expenditure_type_id": 300000047429543,
+            "system_linkage_function": "ST",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "Professional Services",
+            "expenditure_type_id": 300000101276176,
+            "system_linkage_function": "VI",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "Project Management",
+            "expenditure_type_id": 300000101276250,
+            "system_linkage_function": "ST",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "Purchased Equipment",
+            "expenditure_type_id": 300000047429548,
+            "system_linkage_function": "VI",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "RITE_IN_CLOUD_ET",
+            "expenditure_type_id": 300001700925236,
+            "system_linkage_function": "ER",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        },
+        {
+            "expenditure_type_name": "RITE_IN_CLOUD_ET",
+            "expenditure_type_id": 300001700925236,
+            "system_linkage_function": "OT",
+            "creation_date": "2026-01-24T00:00:00Z",
+            "created_by": null,
+            "last_updated_by": null,
+            "last_updated_date": null
+        }
+    ],
+    "hasMore": true,
+    "limit": 25,
+    "offset": 0,
+    "count": 25,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_ExpenditureTypes"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/CrewRite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_ExpenditureTypes"
+        },
+        {
+            "rel": "next",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_ExpenditureTypes?offset=25"
+        }
+    ]
+}

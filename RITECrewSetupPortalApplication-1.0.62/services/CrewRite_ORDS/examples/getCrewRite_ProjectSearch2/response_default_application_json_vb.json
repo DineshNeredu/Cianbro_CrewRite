@@ -1,0 +1,66 @@
+{
+    "items": [
+        {
+            "project_id": 300000325079167,
+            "project_number": "900R-55EJOHN",
+            "project_name": "1012184780",
+            "description": "1012184780",
+            "project_status_code": "300000047429590",
+            "contract_id": 300000391217183,
+            "contract_number": "3456789",
+            "contract_type": "Sell: Project Lines Soft Limit",
+            "created_by": null,
+            "creation_date": "2025-12-01T00:00:00Z",
+            "last_update_date": null,
+            "last_updated_by": null,
+            "safety_bonus_amount": null,
+            "safety_bonus_hours": null,
+            "safety_bonus_rate": null,
+            "bonus_rate": null,
+            "per_diem_rate": null,
+            "client_erp": null,
+            "start_time": null,
+            "end_time": null
+        },
+        {
+            "project_id": 300000325079289,
+            "project_number": "900R-111DUNN",
+            "project_name": "1018921921",
+            "description": "1018921921",
+            "project_status_code": "300000047429590",
+            "contract_id": 300000391217183,
+            "contract_number": "3456789",
+            "contract_type": "Sell: Project Lines Soft Limit",
+            "created_by": null,
+            "creation_date": "2025-12-01T00:00:00Z",
+            "last_update_date": null,
+            "last_updated_by": null,
+            "safety_bonus_amount": null,
+            "safety_bonus_hours": null,
+            "safety_bonus_rate": null,
+            "bonus_rate": null,
+            "per_diem_rate": null,
+            "client_erp": null,
+            "start_time": null,
+            "end_time": null
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 2,
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_ProjectSearch?contract_id=300000391217183"
+        },
+        {
+            "rel": "describedby",
+            "href": "http://129.158.228.138:8080/ords/timerite/metadata-catalog/CrewRite/item"
+        },
+        {
+            "rel": "first",
+            "href": "http://129.158.228.138:8080/ords/timerite/CrewRite/CrewRite_ProjectSearch?contract_id=300000391217183"
+        }
+    ]
+}

@@ -1,0 +1,220 @@
+<oj-sp-welcome-page id="oj-sp-wp1" illustration-background="[[ require.toUrl($page.variables.illustrationBackground) ]]"
+  illustration-foreground="[[ require.toUrl($page.variables.illustrationForeground) ]]"
+  display-options.image-stretch="[[ $page.variables.imageStretch ]]"
+  display-options.mobile-image="[[ $page.variables.mobileImage ]]" display-options.responsive-padding="on"
+  page-title="Crew Combination Time Entry" background-color="dark-pebble">
+
+
+ <div class="oj-flex" style="margin:10px">
+    <div class="oj-flex-item oj-sm-9">
+      <oj-form-layout max-columns=" 3" label-edge="top" columns="3">
+      <oj-select-single label-hint="Crew Name" value="{{ $variables.headerobj.crewname }}" item-text="crew_name"
+        required="true" data="[[$variables.getGetCustomerDetailsListSDP]]"
+        on-value-item-changed="[[$listeners.selectValueItem2]]"></oj-select-single>
+      <oj-input-date label-hint="Crew Date" value="{{ $variables.headerobj.crewDate }}" required="true">
+      </oj-input-date>
+
+      <div>
+      <oj-button label="Search" style="margin-top:20px" chroming="callToAction" class="oj-button-sm"
+        on-oj-action="[[$listeners.buttonAction2]]">
+        <span class="oj-ux-ico-search" slot="startIcon"></span>
+      </oj-button>
+      </div>
+
+      </oj-form-layout>
+    </div>
+    <div class="oj-flex-item oj-sm-3" style="text-align:right;">
+      <oj-button label="Add Column" chroming="callToAction" class="oj-button-sm">
+        <span slot="startIcon" class="oj-ux-ico-plus"></span>
+      </oj-button>
+      <oj-button label="save" chroming="callToAction" class="oj-button-sm" on-oj-action="[[$listeners.buttonAction3]]">
+        <span slot="startIcon" class="oj-ux-ico-save"></span>
+      </oj-button>
+       <oj-button label="Submit" chroming="callToAction" class="oj-button-sm"
+        >
+        <span slot="startIcon" class="oj-ux-ico-save"></span>
+      </oj-button>
+    </div>
+  </div>
+  <!-- <div class="oj-flex">
+    <div class="oj-flex-item oj-sm-10" style="font-size:20px;font-weight:600; padding-left:10px;">
+     
+    </div>
+    <div class="oj-flex-item oj-sm-2">
+      <oj-button label="Add Column" chroming="callToAction" on-oj-action="[[$listeners.buttonAction]]">
+        <span slot="startIcon" class="oj-ux-ico-plus"></span>
+      </oj-button>
+      <oj-button label="Add Row" chroming="callToAction">
+        <span slot="startIcon" class="oj-ux-ico-plus"></span>
+      </oj-button>
+
+    </div>
+  </div> -->
+  
+    <!-- <oj-data-grid id="datagrid" class="demo-data-grid" aria-label="Data Grid Cell Based Grid Demo"
+      data="[[ $variables.data ]]" selection-mode.cell="multiple" scroll-policy="loadMoreOnScroll"
+      header.column.resizable='{"width":"enable", "height":"enable"}'
+      header.row.resizable='{"width":"enable", "height":"enable"}'
+       style="width:100%; height:300px">     
+    </oj-data-grid>  -->
+
+
+    <!-- <oj-data-grid id="datagrid" class="demo-data-grid"
+        aria-label="Data Grid Nested Header Data Provider Demo"
+        selection-mode.cell="multiple" header.row.label.class-name="demo-data-grid-header-row"      
+        header.row.style="[[$functions.rowHeaderStyle]]" header.column.resizable='{"width":"enable", "height":"enable"}'
+        header.row.resizable='{"width":"enable", "height":"enable"}' scroll-policy="loadMoreOnScroll"
+        style="width:100%; min-height:25rem; height:calc(75vh - 10px); min-width: 300px;" data="[[ $variables.data ]]">
+        <template slot="cellTemplate" data-oj-as="cell">
+          <div class="myItem">
+            <oj-bind-text value="{{cell.item.data.data}}"></oj-bind-text>
+          </div>
+        </template>
+        <template slot="rowHeaderTemplate" data-oj-as="cell">
+          <div class="myHeaderItem">
+            <oj-bind-text value="{{cell.item.data.data}}"></oj-bind-text>
+          </div>
+        </template>
+        <template slot="rowEndHeaderTemplate" data-oj-as="cell">
+          <div class="myEndHeaderItem">
+            <oj-bind-text value="{{cell.item.data.data}}"></oj-bind-text>
+          </div>
+        </template>
+      </oj-data-grid> -->
+      <!-- <div class="oj-flex">
+        <div class="oj-flex-item oj-sm-12">
+          <oj-data-grid id="datagrid" class="demo-data-grid" aria-label="Data Grid Nested Header Data Provider Demo"
+            selection-mode.cell="multiple" header.row.label.class-name="demo-data-grid-header-row" edit-mode="cellEdit"
+            header.row.style="[[$functions.rowHeaderStyle]]" header.column.resizable='{"width":"enable", "height":"enable"}'
+            header.row.resizable='{"width":"enable", "height":"enable"}' scroll-policy="loadMoreOnScroll"
+            style="width:100%; min-height:25rem; height:calc(75vh - 10px); min-width: 300px;" data="[[ $variables.data ]]">
+            <template slot="cellTemplate" data-oj-as="cell">
+              <oj-bind-if test="[[cell.item.columnIndex === 0]]">
+                <oj-bind-if test='[[cell.mode === "navigation"]]'>
+                  <oj-bind-text value="{{ cell.item.data.data }}">
+                  </oj-bind-text>
+                </oj-bind-if>
+                <oj-bind-if test='[[cell.mode === "edit"]]'>
+                  <oj-input-text required="true" value="[[ cell.item.data.data ]]" class="editable">
+                  </oj-input-text>
+                </oj-bind-if>
+              </oj-bind-if>  
+               <oj-bind-if test="[[cell.item.columnIndex === 1]]">
+                <oj-bind-if test='[[cell.mode === "navigation"]]'>
+                  <oj-bind-text value="{{ cell.item.data.data }}">
+                  </oj-bind-text>
+                </oj-bind-if>
+                <oj-bind-if test='[[cell.mode === "edit"]]'>
+                  <oj-input-text required="true" value="[[ cell.item.data.data ]]" class="editable">
+                  </oj-input-text>
+                </oj-bind-if>
+              </oj-bind-if>              
+            </template>
+           
+          </oj-data-grid>      
+        </div>      
+      </div> -->
+  <oj-table id="timeTable" data="[[ $variables.timeDP ]]" style="width:100%"
+    columns='[{"field":"name","headerText":"","sortable":"disabled","width":200},
+    {"field":"timetype","sortable":"disabled","width":200},
+    {"field":"jobCode","width":200,"sortable":"disabled"},
+    {"field":"A","headerText":"A","sortable":"disabled","template":"A"},
+    {"field":"B","headerText":"B","sortable":"disabled","template":"B"},
+    {"field":"C","headerText":"C","sortable":"disabled","template":"C"},
+    {"field":"D","headerText":"D","sortable":"disabled","template":"D"},
+    {"field":"E","headerText":"E","sortable":"disabled","template":"E"},
+    {"field":"F","headerText":"F","sortable":"disabled","template":"F"}]' edit-mode="rowEdit"
+    on-oj-before-row-edit="[[$listeners.timeTableBeforeRowEdit]]"
+    on-oj-before-row-edit-end="[[$listeners.timeTableBeforeRowEditEnd]]">
+    
+    
+      <template slot="A" data-oj-as="cell">
+        <oj-bind-if test='[[cell.mode=="navigation"]]'>
+          <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+        </oj-bind-if>      
+        <oj-bind-if test='[[cell.mode=="edit" && $functions.checkProjectTask(cell.row.name)]]'>
+          <oj-input-number :id="[[$current.columnIndex]]" aria-label="Input Text"  class="editable" value="{{ $variables.timeEntry[$functions.getDynamicName(cell.row.name, $current.columnIndex)] }}"></oj-input-number>
+        </oj-bind-if>
+           <oj-bind-if test='[[cell.mode=="edit" && !$functions.checkProjectTask(cell.row.name) && cell.row.name==="Project"]]'>
+          <oj-select-single  :id="[[$current.columnIndex]]"  data="[[ $variables.projectADP ]]" item-text="project_name"
+            value="{{ $variables.timeEntry[$functions.getDynamicName(cell.row.name, $current.columnIndex)]  }}"></oj-select-single> 
+        </oj-bind-if> 
+         <oj-bind-if test='[[cell.mode=="edit" && !$functions.checkProjectTask(cell.row.name) && cell.row.name==="Task"]]'>
+          <oj-select-single :id="[[$current.columnIndex]]"  data="[[ $variables.projectADP ]]" item-text="project_name"
+            value="{{ $variables.timeEntry[$functions.getDynamicName(cell.row.name, $current.columnIndex)] }}"></oj-select-single> 
+        </oj-bind-if> 
+      </template>
+      <template slot="B" data-oj-as="cell">
+        <oj-bind-if test='[[cell.mode=="navigation"]]'>
+          <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+        </oj-bind-if>      
+        <oj-bind-if test='[[cell.mode=="edit" && $functions.checkProjectTask(cell.row.name)]]'>
+          <oj-input-number :id="[[$current.columnIndex]]"  aria-label="Input Text"  class="editable" value="{{ $variables.timeEntry.B}}"></oj-input-number>
+        </oj-bind-if>
+          <oj-bind-if test='[[cell.mode=="edit" && !$functions.checkProjectTask(cell.row.name) && cell.row.name==="Project"]]'>
+          <oj-select-single :id="[[$current.columnIndex]]" data="[[ $variables.projectADP ]]" item-text="project_name"
+            value="{{ $variables.timeEntry.B }}"></oj-select-single> 
+        </oj-bind-if> 
+      </template>
+      <template slot="C" data-oj-as="cell">
+        <oj-bind-if test='[[cell.mode=="navigation"]]'>
+          <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+        </oj-bind-if>      
+        <oj-bind-if test='[[cell.mode=="edit" && $functions.checkProjectTask(cell.row.name)]]'>
+          <oj-input-number :id="[[$current.columnIndex]]"  aria-label="Input Text"  class="editable" value="{{ $variables.timeEntry.C }}"></oj-input-number>
+        </oj-bind-if>
+          <oj-bind-if test='[[cell.mode=="edit" && !$functions.checkProjectTask(cell.row.name) && cell.row.name==="Project"]]'>
+          <oj-select-single :id="[[$current.columnIndex]]" data="[[ $variables.projectADP ]]" item-text="project_name"
+            value="{{ $variables.timeEntry.C }}"></oj-select-single> 
+        </oj-bind-if> 
+      </template>
+      <template slot="D" data-oj-as="cell">
+        <oj-bind-if test='[[cell.mode=="navigation"]]'>
+          <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+        </oj-bind-if>      
+        <oj-bind-if test='[[cell.mode=="edit" && $functions.checkProjectTask(cell.row.name)]]'>
+          <oj-input-number :id="[[$current.columnIndex]]"  aria-label="Input Text"  class="editable" value="{{ $variables.timeEntry.D }}"></oj-input-number>
+        </oj-bind-if>
+          <oj-bind-if test='[[cell.mode=="edit" && !$functions.checkProjectTask(cell.row.name) && cell.row.name==="Project"]]'>
+          <oj-select-single :id="[[$current.columnIndex]]" data="[[ $variables.projectADP ]]" item-text="project_name"
+            value="{{ $variables.timeEntry.D }}"></oj-select-single> 
+        </oj-bind-if> 
+      </template>
+      <template slot="E" data-oj-as="cell">
+        <oj-bind-if test='[[cell.mode=="navigation"]]'>
+          <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+        </oj-bind-if>      
+        <oj-bind-if test='[[cell.mode=="edit" && $functions.checkProjectTask(cell.row.name)]]'>
+          <oj-input-number:id="[[$current.columnIndex]]"  aria-label="Input Text"  class="editable" value="{{ $variables.timeEntry.E}}"></oj-input-number>
+        </oj-bind-if>
+          <oj-bind-if test='[[cell.mode=="edit" && !$functions.checkProjectTask(cell.row.name) && cell.row.name==="Project"]]'>
+          <oj-select-single :id="[[$current.columnIndex]]" data="[[ $variables.projectADP ]]" item-text="project_name"
+            value="{{ $variables.timeEntry.E }}"></oj-select-single> 
+        </oj-bind-if> 
+      </template>
+      <template slot="F" data-oj-as="cell">
+        <oj-bind-if test='[[cell.mode=="navigation"]]'>
+          <oj-bind-text value="[[cell.data]]"></oj-bind-text>
+        </oj-bind-if>      
+        <oj-bind-if test='[[cell.mode=="edit" && $functions.checkProjectTask(cell.row.name)]]'>
+          <oj-input-number :id="[[$current.columnIndex]]"  aria-label="Input Text"  class="editable" value="{{ $variables.timeEntry.F }}"></oj-input-number>
+        </oj-bind-if>
+        <oj-bind-if test='[[cell.mode=="edit" && !$functions.checkProjectTask(cell.row.name) && cell.row.name==="Project"]]'>
+          <oj-select-single :id="[[$current.columnIndex]]" data="[[ $variables.projectADP ]]" item-text="project_name"
+            value="{{ $variables.timeEntry.A }}"></oj-select-single> 
+        </oj-bind-if> 
+      </template>
+    
+  </oj-table>
+  
+      
+
+      
+
+
+
+
+
+
+</oj-sp-welcome-page>
+

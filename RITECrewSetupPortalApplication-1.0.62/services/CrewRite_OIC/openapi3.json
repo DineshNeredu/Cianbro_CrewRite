@@ -1,0 +1,421 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Riteoicdev Idjm2yj32zav Ia Integration Us Ashburn 1 Ocp Oraclecloud Com",
+        "version": "1.0.0",
+        "x-vb": {
+            "transforms": {
+                "path": "../Transform.js"
+            }
+        }
+    },
+    "servers": [
+        {
+            "url": "vb-catalog://backends/CrewRite_OIC"
+        }
+    ],
+    "paths": {
+        "/CREWRITE/CR_PROJECTS_LOV/1.0/getProjects": {
+            "get": {
+                "operationId": "getCREWRITECR_PROJECTS_LOV1_0GetProjects",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCREWRITECR_PROJECTS_LOV1_0GetProjects"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getCREWRITECR_PROJECTS_LOV1_0GetProjects/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/CREWRITE/TRORACLECUSTOMERSDETAILS/1.0/TROracleCustom": {
+            "get": {
+                "operationId": "getCREWRITETRORACLECUSTOMERSDETAILS1_0TROracleCustom",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/CREWRITE/TRORACLEPROJECTSWITHOUTCUSTCON/1.0/TROracleProjects": {
+            "get": {
+                "operationId": "getCREWRITETRORACLEPROJECTSWITHOUTCUSTCON1_0TROracleProjects",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/CREWRITE/TRORACLEJOBDETAILS/1.0/TROracleJobs": {
+            "post": {
+                "operationId": "getCREWRITETRORACLEJOBDETAILS1_0TROracleJobs",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/CREWRITE/TRORACLEDEPARTMENTDETAILS/1.0/TROracleDepartments": {
+            "post": {
+                "operationId": "getCREWRITETRORACLEDEPARTMENTDETAILS1_0TROracleDepartments",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/CREWRITE/TR_EMP_DETAILS/1.0/getEmpDetails": {
+            "post": {
+                "operationId": "getCREWRITETR_EMP_DETAILS1_0GetEmpDetails",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/CREWRITE/TRORACLEPROJECTTEAMDETAILS/1.0/TROracleProjectsTeam": {
+            "post": {
+                "operationId": "getCREWRITETRORACLEPROJECTTEAMDETAILS1_0TROracleProjectsTeam",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/CREWRITE/TRORCALECONTRACTSALL/1.0/invokeContractsIntoDBREST": {
+            "get": {
+                "operationId": "getCREWRITETRORCALECONTRACTSALL1_0InvokeContractsIntoDBREST",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/CREWRITE/TR_MASTER_DATA_LOAD_V11/1.0/loadMasterDataIntoATP": {
+            "post": {
+                "operationId": "postCREWRITETR_MASTER_DATA_LOAD_V11_1_0LoadMasterDataIntoATP",
+                "requestBody": {
+                    "description": "Request for application/json",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostCREWRITETR_MASTER_DATA_LOAD_V11_1_0LoadMasterDataIntoATPRequest"
+                            },
+                            "examples": {
+                                "vb": {
+                                    "summary": "Example stored by VB User",
+                                    "externalValue": "./examples/postCREWRITETR_MASTER_DATA_LOAD_V11_1_0LoadMasterDataIntoATP/request_application_json_vb.json"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/CREWRITE/CR_EMPLOYEE_DETAILS_LOV/1.0/getEmpDetails": {
+            "post": {
+                "operationId": "getCREWRITECR_EMPLOYEE_DETAILS_LOV1_0GetEmpDetails",
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCREWRITECR_EMPLOYEE_DETAILS_LOV1_0GetEmpDetails"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getCREWRITECR_EMPLOYEE_DETAILS_LOV1_0GetEmpDetails/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/CREWRITE/TRORACLEPROJECTDETAILS/1.0/TROracleProjects": {
+            "post": {
+                "operationId": "postCREWRITETRORACLEPROJECTDETAILS1_0TROracleProjects",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/CREWRITE/TRORACLEEMPLOYEEDETAILS/1.0/getEmpDetails": {
+            "post": {
+                "summary": "POST_EMPDETAILS_SYNC",
+                "operationId": "postCREWRITETRORACLEEMPLOYEEDETAILS1_0GetEmpDetails",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "create"
+                }
+            }
+        },
+        "/EQUIPMENT_RITE/EQP_USERS_JOB_ROLES/1.0/UsersJobRoles": {
+            "get": {
+                "operationId": "getEQUIPMENT_RITEEQP_USERS_JOB_ROLES1_0UsersJobRoles",
+                "parameters": [
+                    {
+                        "name": "p_username",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/CREWRITE/TR_USER_JOB_ROLES/1.0/UsersJobRoles": {
+            "get": {
+                "operationId": "getCREWRITETR_USER_JOB_ROLES1_0UsersJobRoles",
+                "parameters": [
+                    {
+                        "name": "p_username",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        },
+        "/CREWRITE/TRORACLECONTRACTSDETAILS/1.0/TROracleContracts": {
+            "post": {
+                "operationId": "postCREWRITETRORACLECONTRACTSDETAILS1_0TROracleContracts",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "create"
+                }
+            }
+        },
+        "/CREWRITE/TR_ORACLE_OTL_CREATE/1.0/PostTimecards": {
+            "post": {
+                "operationId": "postCREWRITETR_ORACLE_OTL_CREATE1_0PostTimecards",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PostCREWRITETR_ORACLE_OTL_CREATE1_0PostTimecardsRequest"
+                            },
+                            "examples": {
+                                "vb": {
+                                    "externalValue": "./examples/postCREWRITETR_ORACLE_OTL_CREATE1_0PostTimecards/request_application_json_vb.json"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "create"
+                }
+            }
+        },
+        "/CREWRITE/TRORACLECUSTOMERSDETAILS/1.0/TROracleCustomers": {
+            "post": {
+                "operationId": "postCREWRITETRORACLECUSTOMERSDETAILS1_0TROracleCustomers",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "create"
+                }
+            }
+        },
+        "/CREWRITE/TRORACLETIMETYPEDETAILS/1.0/getTimeTypes": {
+            "post": {
+                "operationId": "postCREWRITETRORACLETIMETYPEDETAILS1_0GetTimeTypes",
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetCREWRITECR_PROJECTS_LOV1_0GetProjects": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "projectId": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "number": {
+                                    "type": "string"
+                                },
+                                "projectName": {
+                                    "type": "string"
+                                },
+                                "projectTypeId": {
+                                    "type": "string"
+                                },
+                                "projectStatusCode": {
+                                    "type": "string"
+                                },
+                                "startDate": {
+                                    "type": "string"
+                                },
+                                "completionDate": {
+                                    "type": "string"
+                                },
+                                "enabledFlag": {
+                                    "type": "string"
+                                },
+                                "orgId": {
+                                    "type": "string"
+                                },
+                                "businessUnitName": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "count": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "PostCREWRITETR_MASTER_DATA_LOAD_V11_1_0LoadMasterDataIntoATPRequest": {
+                "type": "object",
+                "properties": {
+                    "party_name": {
+                        "type": "string"
+                    },
+                    "contract_num": {
+                        "type": "string"
+                    },
+                    "project_name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "GetCREWRITECR_EMPLOYEE_DETAILS_LOV1_0GetEmpDetails": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "PERSON_ID": {
+                                    "type": "string"
+                                },
+                                "PERSON_NUMBER": {
+                                    "type": "string"
+                                },
+                                "MANAGERNUMBER": {
+                                    "type": "string"
+                                },
+                                "FIRST_NAME": {
+                                    "type": "string"
+                                },
+                                "EMP": {
+                                    "type": "string"
+                                },
+                                "MANAGER": {
+                                    "type": "string"
+                                },
+                                "LAST_NAME": {
+                                    "type": "string"
+                                },
+                                "ASSIGNMENT_ID": {
+                                    "type": "string"
+                                },
+                                "ASSIGNMENT_NUMBER": {
+                                    "type": "string"
+                                },
+                                "ASSIGNMENTSTATUS": {
+                                    "type": "string"
+                                },
+                                "LEGALEMPLOYER": {
+                                    "type": "string"
+                                },
+                                "BUSINESSUNIT": {
+                                    "type": "string"
+                                },
+                                "DEPARTMENT": {
+                                    "type": "string"
+                                },
+                                "WORKERTYPE": {
+                                    "type": "string"
+                                },
+                                "HIREDATE": {
+                                    "type": "string"
+                                },
+                                "JOBNAME": {
+                                    "type": "string"
+                                },
+                                "JOB_CODE": {
+                                    "type": "string"
+                                },
+                                "GRADENAME": {
+                                    "type": "string"
+                                },
+                                "LOCATION_CODE": {
+                                    "type": "string"
+                                },
+                                "LOCATION_NAME": {
+                                    "type": "string"
+                                },
+                                "PERSONTYPE": {
+                                    "type": "string"
+                                },
+                                "MIDDLE_NAMES": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "PostCREWRITETR_ORACLE_OTL_CREATE1_0PostTimecardsRequest": {
+                "type": "object",
+                "properties": {
+                    "TIME_ENTRY_ID": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
