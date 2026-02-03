@@ -1,8 +1,0 @@
-{
-  "id": "crew-generate-time-cards",
-  "description": "Flow main",
-  "defaultPage": "crew-generate-time-cards-start",
-  "services": {},
-  "types": {},
-  "variables": {}
-}

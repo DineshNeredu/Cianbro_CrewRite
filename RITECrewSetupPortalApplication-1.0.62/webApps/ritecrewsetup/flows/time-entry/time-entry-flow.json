@@ -1,8 +1,0 @@
-{
-  "id": "time-entry",
-  "description": "Flow main",
-  "defaultPage": "time-entry-start",
-  "services": {},
-  "types": {},
-  "variables": {}
-}

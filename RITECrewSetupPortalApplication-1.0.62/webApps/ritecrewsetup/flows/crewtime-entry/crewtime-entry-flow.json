@@ -1,8 +1,0 @@
-{
-  "id": "crewtime-entry",
-  "description": "Flow main",
-  "defaultPage": "crewtime-entry-start",
-  "services": {},
-  "types": {},
-  "variables": {}
-}

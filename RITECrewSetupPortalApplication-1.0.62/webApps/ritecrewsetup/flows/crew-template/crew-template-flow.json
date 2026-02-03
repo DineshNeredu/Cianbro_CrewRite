@@ -1,8 +1,0 @@
-{
-  "id": "crew-template",
-  "description": "Flow main",
-  "defaultPage": "crew-template-start",
-  "services": {},
-  "types": {},
-  "variables": {}
-}

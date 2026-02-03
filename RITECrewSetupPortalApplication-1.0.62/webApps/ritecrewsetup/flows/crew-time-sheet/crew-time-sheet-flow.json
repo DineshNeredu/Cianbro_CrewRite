@@ -1,8 +1,0 @@
-{
-  "id": "crew-time-sheet",
-  "description": "Flow main",
-  "defaultPage": "crew-time-sheet-start",
-  "services": {},
-  "types": {},
-  "variables": {}
-}

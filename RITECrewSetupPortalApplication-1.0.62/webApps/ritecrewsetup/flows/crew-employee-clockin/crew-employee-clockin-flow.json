@@ -1,8 +1,0 @@
-{
-  "id": "crew-employee-clockin",
-  "description": "Flow main",
-  "defaultPage": "crew-employee-clockin-start",
-  "services": {},
-  "types": {},
-  "variables": {}
-}
